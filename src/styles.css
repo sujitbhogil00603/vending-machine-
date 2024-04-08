@@ -1,0 +1,984 @@
+/* Import the Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+  --c-white: #fff;
+  --c-black: #000;
+  --c-ash: #eaeef6;
+  --c-charcoal: #a0a0a0;
+  --c-void: #141b22;
+  --c-fair-pink: #FFEDEC;
+  --c-apricot: #FBC8BE;
+  --c-coffee: #754D42;
+  --c-del-rio: #917072;
+  --c-java: #1FCAC5;
+  --c-titan-white: #f1eeff;
+  --c-cold-purple: #a69fd6;
+  --c-indigo: #6558d3;
+  --c-governor: #4133B7;
+}
+body{
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+}
+.TabList {
+  list-style-type: none;
+  
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff; /* Modern blue color */
+
+  /* Apply an inset box shadow */
+box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+
+/* Optional: Add some padding and background color for better visibility */
+padding: 30px;
+background-color: #fff;
+
+}
+
+.Tab::before {
+    content: '';
+    display: inline-block;
+    background: url('https://www.nicepng.com/png/full/758-7587037_white-arrow-ghrz8w2k3eytkprd-2019-01-29t14-next-icon.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-right: 5px; /* Adjusted margin for spacing */
+    height: 20px;
+    padding: 5px;
+    border-radius: 999px;
+    width: 100px;
+    vertical-align: middle;
+  }
+  
+
+.Tab {
+  position: relative;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  color: #000000; /* Black text color for better readability */
+  display: flex;
+  align-items: center;
+  height: 30px;
+  border-radius: 999px; /* Adjust the value to make it more or less pill-shaped */
+  margin-right: 10px; /* Add margin for spacing between tabs */
+  background-color: #dddddd; /* Default gray background color */
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+  font-weight: 700; /* Bold */
+}
+
+.Tab[aria-selected="true"] {
+  background-color: #000000; /* Darker blue for selected tab */
+  color: #ffffff;
+  height: 30px;
+  border-radius: 999px; /* Adjust the value to make it more or less pill-shaped */
+}
+
+.middle {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-family: 'Montserrat', sans-serif;
+   
+  }
+  
+  .middle-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    
+    color: #494646;
+  }
+  .l-grid {
+    display: -ms-grid;
+}
+
+
+.l-grid--half-half {
+    -ms-grid-columns: 1fr 1rem 1fr;
+    -ms-grid-rows: minmax(100vh, 1fr);
+}
+
+.second {
+    -ms-grid-column: 3;
+}
+
+/* Aligning with legacy grid is a little more difficult
+because of the lack of align-items, you must use align-self */
+
+.ms-center-content {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr;
+}
+
+.ms-align-center {
+    -ms-grid-column: 1;
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: center;
+}
+
+/* Evergreen browsers that don't yet support grid */
+@supports not(display: -ms-grid) {
+    
+    .l-grid {
+         display: flex; 
+    }
+
+    .l-grid--half-half > .l-grid__item {
+         flex: 1 1 auto;
+    }
+
+    .l-grid--gutter-large {
+         margin-left: -1rem;
+    }
+
+    .l-grid--gutter-large > .l-grid__item {
+         margin-left: 1rem;
+    }
+}
+
+/* Evergreen browsers with full grid support */
+@supports (display: grid) {
+    /* Only the display: grid part needs a feature query */
+    .l-grid {
+         display: grid;
+    } 
+    
+    /* Reset the margins since we no longer need them */
+    .l-grid--gutter-large {
+         margin: initial;
+    }
+    
+    .l-grid--gutter-large > .l-grid__item {
+         margin: initial;
+    }
+}
+
+/* Declares two columns 1 fraction each */
+.l-grid--half-half {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Declares a gutter of 1rem between grid items */
+.l-grid--gutter-large {
+    grid-gap: 1rem;
+}
+
+.l-center-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.l-full-height {
+    min-height: 80vh;
+}
+
+.theme-green {
+    background: #36d298;
+    border-bottom-right-radius: 55px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-green::before {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: 0;
+    width: 500px; /* Adjust the width of the peeking image */
+    height: 500px; /* Adjust the height of the peeking image */
+    background: url('https://i.imgur.com/Y49uSh6.png') no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+
+.theme-white {
+    background: #fff;
+    color: #111;
+}
+
+.content {
+    max-width: 500px;
+}
+
+.heading {
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    position: relative;
+}
+
+.description::after {
+    content: '';
+    display: block;
+    background-image: url('https://starpng.com/public/uploads/preview/curved-arrow-png-51574522925m7nhxzdtup.png');
+    background-size: cover;
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    position: absolute;
+    top: 100px; /* Adjust the positioning as needed */
+    left: 60%; /* Center the image horizontally */
+    transform: translateX(-50%);
+}
+
+
+.description1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    position: relative;
+}
+.cartstyle {
+    position: fixed;
+    border-radius: 5px;
+    bottom: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    
+    left: 20px;
+    margin-left: 1em;
+}
+
+ul{
+    
+    
+}
+
+.fixed-button-payment {
+    position: fixed;
+    
+    right: 20px;
+    padding: 10px 40px;
+    background-color: #ff5252; /* Change the background color as needed */
+    color: #ffffff; /* Change the text color as needed */
+    border: none;
+    border-radius: 5px;
+    bottom: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Optional: Add hover effect */
+  .fixed-button-payment:hover {
+    background-color: #000000; /* Change the hover background color as needed */
+  }
+
+  
+  .link {
+    position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 90px; /* Adjust the margin as needed */
+    width: 15rem;
+    height: 15rem;
+    display: inline-block;
+    font: 300 1.55rem/1.4 "Josefin Sans";
+    text-transform: uppercase;
+    letter-spacing: 0.1175em;
+    word-spacing: 0.3em;
+    text-decoration: none;
+  }
+  .link__svg {
+    width: 100%;
+    height: auto;
+    transform-box: fill-box;
+    fill: #2B3338;
+    stroke: #2B3338;
+    stroke-width: 0.05em;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .link__cloud {
+    transform-origin: 50% 50%;
+    -webkit-animation: rotate normal infinite 60s linear;
+            animation: rotate normal infinite 60s linear;
+    fill: rgba(255, 255, 255, 0.15);
+  }
+  .link__face, .link__arrow {
+    transform-origin: 50% 50%;
+    transition: transform 0.15s cubic-bezier(0.32, 0, 0.67, 0);
+  }
+  .link:hover .link__face, .link:hover .link__arrow {
+    transform: scale(1.1);
+    transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+  .link__arrow {
+    stroke-width: 0.075em;
+  }
+  .link__text {
+    -webkit-animation: rotateReverse normal infinite 20s linear;
+            animation: rotateReverse normal infinite 20s linear;
+    transform-origin: 50% 50%;
+  }
+  .link:hover .link__text {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+  .link--alt {
+    font-size: 1.15rem;
+    letter-spacing: 0;
+    word-spacing: 0;
+  }
+  
+  @-webkit-keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes rotateReverse {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes rotateReverse {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  span.stock-pill {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  hr{
+    margin-bottom:15px;
+  }
+
+
+  
+  /* Style for the selected items list */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Style for the selected item in the list */
+  li {
+    
+    margin: 10px;
+    padding: 15px;
+    display: inline-block;
+    border-radius: 8px; /* Add border radius */
+  }
+  
+  button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+    color: #fff;
+  }
+  
+  
+  /* Style for the Pay for Items button */
+  button.pay-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px; /* Add border radius */
+    border-color: #ccc; /* Add border color */
+  }
+  
+  /* Style for the Pay for Items button on hover */
+  button.pay-button:hover {
+    background-color: #45a049;
+  }
+  
+  .pill-box {
+    --border-size: 3px;
+    --border-angle: 0turn;
+    
+    padding:10px 20px;
+    background-image: conic-gradient(from var(--border-angle), rgb(255, 255, 255), rgb(255, 255, 255) 50%, rgb(255, 255, 255)), conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+    background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-animation: bg-spin 3s linear infinite;
+            animation: bg-spin 3s linear infinite;
+  }
+
+  .pill-box1 {
+    --border-size: 3px;
+    --border-angle: 0turn;
+    border-radius: 18px;
+    padding:10px 20px;
+    border: 2px #ccc solid;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-animation: bg-spin 10s linear infinite;
+            animation: bg-spin 10s linear infinite;
+  }
+  
+  @-webkit-keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+  
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+  
+  
+  
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+  
+  .centered-text1 {
+    justify-content: center;
+  display: flex;
+    
+  }
+
+  .abox{
+    padding: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 18px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    transform: translate(-50%, -50%);
+  }
+
+  .centered-text {
+    text-align: center;
+    position: absolute;
+    top: 55%;
+    border-radius: 18px;
+    height: 450px;
+    width:450px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .centered-text::before {
+    content: url('https://www.freeiconspng.com/thumbs/stop-icon/ban-stop-icon-22.png'); /* Replace with the path to your image */
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 40px; /* Adjust margin as needed */
+  }
+  
+  .contfix {
+    list-style: none; /* Remove default list styles (bullet points) */
+    
+    
+   
+  }
+
+  .libruh{
+    border: 2px #000000 solid;
+    
+  }
+
+  .libruhcontainer{
+    max-width: 400px;
+  }
+  .libruh1{
+    border: 2px #000000 solid;
+    display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+  border: 1px solid #ccc; /* Optional: Add a border for visualization */
+  padding: 10px; /* Optional: Add padding for visualization */
+}
+
+  .popup-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 200px;
+    background-color: #c8e6ff;
+    color: #ee3737;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: opacity 0.3s ease-in-out;
+    overflow: hidden; /* Hide overflow to prevent image inside the container */
+}
+
+.cards {
+  
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 90%;
+  max-width: 1000px;
+  margin: 5vh auto;
+}
+
+.card {
+  border-radius: 16px;
+  box-shadow: 0 30px 30px -25px rgba(255, 255, 255, 0.25);
+ 
+}
+
+.information {
+  background-color: var(--c-white);
+  padding: 1.5rem;
+}
+.information .tag {
+  display: inline-block;
+  background-color: var(--c-titan-white);
+  color: var(--c-indigo);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5em 0.75em;
+  line-height: 1;
+  border-radius: 6px;
+}
+.information .tag + * {
+  margin-top: 1rem;
+}
+.information .title {
+  font-size: 1.5rem;
+  color: var(--c-void);
+  line-height: 1.25;
+}
+.information .title + * {
+  margin-top: 1rem;
+  
+}
+.information .info {
+  color: var(--c-charcoal);
+  margin-left: 10px;
+
+}
+.information .info + * {
+  margin-top: 1.25rem;
+  margin-left: 10px;
+}
+.information .button {
+  font: inherit;
+  line-height: 1;
+  background-color: var(--c-white);
+  border: 2px solid var(--c-indigo);
+  color: var(--c-indigo);
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.information .button:hover, .information .button:focus {
+  background-color: var(--c-indigo);
+  color: var(--c-white);
+}
+.information .details {
+  display: flex;
+  gap: 1rem;
+}
+.information .details div {
+  padding: 0.75em 1em;
+  background-color: var(--c-titan-white);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.125em;
+  flex-basis: 50%;
+}
+.information .details dt {
+  font-size: 0.875rem;
+  color: var(--c-cold-purple);
+}
+.information .details dd {
+  color: var(--c-indigo);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.plan {
+  padding: 0px;
+  background-color: var(--c-black);
+  
+}
+
+.right-float-text {
+  float: right;
+}
+.plan strong {
+  font-weight: 600;
+  color: var(--c-coffee);
+}
+.plan .inner {
+  padding: 80px;
+  
+  background-color: var(--c-fair-pink);
+  border-radius: 12px;
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.plan .pricing {
+  border-radius: 18px;
+  right: 0;
+  background-color: var(--c-apricot);
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  
+  
+  font-weight: 600;
+  color: var(--c-coffee);
+}
+.plan .pricing small {
+  color: var(--c-del-rio);
+  font-size: 0.75em;
+  margin-left: 0.25em;
+}
+.plan .title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  color: var(--c-coffee);
+}
+.plan .title + * {
+  margin-top: 0.75rem;
+  
+}
+.plan .info + * {
+  margin-top: 1rem;
+  
+  
+}
+.plan .features {
+  display: flex;
+  flex-direction: column;
+}
+.plan .features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.plan .features li + * {
+  margin-top: 0.75rem;
+}
+.plan .features .icon {
+  background-color: var(--c-java);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-white);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.plan .features .icon svg {
+  width: 14px;
+  height: 14px;
+}
+.plan .features + * {
+  margin-top: 1.25rem;
+}
+.plan button {
+  font: inherit;
+  background-color: var(--c-indigo);
+  border-radius: 6px;
+  color: var(--c-white);
+  font-weight: 500;
+  font-size: 1.125rem;
+  
+  border: 0;
+  padding: 1em;
+}
+.plan button:hover, .plan button:focus {
+  background-color: var(--c-governor);
+}
+
+.break{
+  display: block;
+  content: '';
+  color: #000;
+  margin-top: 1em; /* Adjust the margin as needed */
+}
+
+.box-container {
+  display: flex;
+}
+
+.rounded-box {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  overflow: hidden;
+  margin-right: 20px; 
+}
+
+.rounded-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+
+.container1 {
+  position: relative;
+  
+}
+
+.img1 {
+  position: absolute;
+  width:350px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  height: auto;
+}
+/* Add these styles to your existing CSS file or create a new one */
+
+.error-message {
+  color: #fff;
+  background-color: #e74c3c; /* Use your desired background color */
+  padding: 10px;
+ 
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.pill {
+  
+}
+.container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .fruit-info {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap as needed */
+  }
+  
+  .item-container {
+    
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 0 25px 50px -0px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  
+  .item-container:hover {
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    transform: scale(1.05);
+  }
+  
+  .fruit-image {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    height: 200px; /* Set a larger height for a bigger image */
+    object-fit: contain; /* Maintain aspect ratio and fit within container */
+  }
+  
+  .stock-pill {
+    background-color: #4caf50;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  /* Container for the login card */
+.login-card-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    border-radius: 8px;
+  
+    background-color: #fff;
+    text-align: center; /* Center the contents */
+  }
+  .login-card-container1 {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+   
+    border-radius: 8px;
+    
+    background-color: #fff;
+    text-align: center; /* Center the contents */
+  }
+  /* Style for the password input */
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Style for the login button */
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50; /* Green background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the login button */
+  .login-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style for the centered image */
+  .login-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* To make it a circle */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Center the image with margin: 0 auto */
+  }
+
+  .butt{
+    margin-left: 10px;
+  }
+  /* Define a class */
+.scaleOnHover {
+  /* Set initial styling */
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+/* Apply scaling when hovering over the element with the class */
+.scaleOnHover:hover {
+  transform: scale(0.95); /* You can adjust the scale factor as needed */
+}
+
+.centerbruh{
+  margin-bottom: 10px;
+}
+
+
+.form-container {
+  max-width: 500px;
+  margin: 40px;
+  padding: 40px;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+input {
+  width: 100%;
+  padding: 10px; /* Reduced padding for a more compact feel */
+  margin-bottom: 16px;
+  border: 1px solid #ddd; /* Lighter border color for a softer look */
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
